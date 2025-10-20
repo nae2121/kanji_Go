@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>問題画面</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="center-screen card">
+    <h2 id="questionNum">問題1</h2>
+    <p id="questionText" class="question"></p>
+    <div class="options-grid" id="options"></div>
+    <p id="result" class="result"></p>
+    <div class="button-area">
+      <button id="passBtn" class="btn">PASS</button>
+      <button id="endBtn" class="btn">終了</button>
+    </div>
+    <p id="scoreText"></p>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+[
+  {
+    "question": "「森」の漢字の部首は？",
+    "options": ["木", "口", "水", "人", "火"],
+    "correct_answer": "木"
+  },
+  {
+    "question": "「海」の漢字の部首は？",
+    "options": ["水", "口", "土", "火", "木"],
+    "correct_answer": "水"
+  },
+  {
+    "question": "「山」の読みは？",
+    "options": ["やま", "かわ", "たに", "みね", "はやし"],
+    "correct_answer": "やま"
+  }
+]

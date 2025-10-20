@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>漢字でGO風クイズ</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="center-screen card">
+    <h1>漢字でGO風クイズ</h1>
+    <p>スタートボタンを押してクイズ開始！</p>
+    <button id="startBtn" class="btn primary">スタート</button>
+  </main>
+  <script>
+    document.getElementById('startBtn').onclick = () => {
+      location.href = '/quiz';
+    };
+  </script>
+</body>
+</html>
