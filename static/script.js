@@ -1,7 +1,6 @@
 let questions = [];
 let currentIndex = 0;
 let correctCount = 0;
-
 const questionText = document.getElementById('questionText');
 const optionsDiv = document.getElementById('options');
 const resultText = document.getElementById('result');
