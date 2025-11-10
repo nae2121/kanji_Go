@@ -1,26 +1,43 @@
+/* Viewportフィットとレイアウト安定化 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
 body {
   font-family: "Yu Mincho", "serif";
   background: #fff8f0;
   color: #333;
   margin: 0;
+  overflow: hidden; /* 1画面内に収め、ページスクロールを防止 */
 }
 .center-screen {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100dvh; /* 動的VHでアドレスバー等の影響を除外し、常に1画面にフィット */
+  width: 100dvw; /* 横幅も画面にフィット */
+  padding: 16px; /* 端のクリップを避ける余白 */
+  flex-direction: column; /* 子要素（h1, p, button）を縦に並べる */
+  gap: 12px; /* 要素間の間隔 */
 }
 .card {
   background: #fdf5e6;
-  padding: 30px;
+  padding: clamp(16px, 4vh, 30px);
   border: 4px solid #333;
   border-radius: 10px;
   box-shadow: 5px 5px 0 #ccc;
   text-align: center;
+  width: 100%; /* 横幅をコンテナ幅いっぱいに */
 }
 h1, h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
+  font-size: clamp(24px, 4vw, 32px);
+  margin: 0 0 16px; /* 上マージンを0にして縦方向のはみ出しを抑制 */
+  line-height: 1.2;
+}
+.card p {
+  margin: 0 0 16px;
 }
 .options-grid {
   display: grid;
@@ -30,7 +47,7 @@ h1, h2 {
   margin-bottom: 20px;
 }
 .option-btn {
-  font-size: 1.2em;
+  font-size: clamp(14px, 2.4vw, 18px);
   padding: 10px;
   border: 2px solid #333;
   border-radius: 5px;
@@ -41,7 +58,7 @@ h1, h2 {
   background: #ffeedd;
 }
 .btn {
-  font-size: 1.1em;
+  font-size: clamp(14px, 2vw, 18px);
   padding: 8px 16px;
   margin: 5px;
   border: 2px solid #333;
@@ -53,7 +70,7 @@ h1, h2 {
   background: #ffeedd;
 }
 .result {
-  font-size: 1.3em;
+  font-size: clamp(16px, 2.4vw, 20px);
   margin-top: 10px;
 }
 .button-area {
